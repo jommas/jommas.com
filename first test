@@ -1,0 +1,212 @@
+
+<DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<meta id="viewport" name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<head></head>
+<link rel="stylesheet"  href="zhuce.css">
+
+<script>
+    
+    // alert('hello world'); 
+
+</script>
+
+
+<title>WiFi万能钥匙注册</title>
+<body >
+<div  class="register"> 
+  <form  action="save.php"  method="get">
+
+         <div class="logo" >
+            <img src="12.pic.jpg"  width="15%" >
+            <h3 class="logoname">WiFi万能钥匙</h3>
+             
+         </div>
+
+        <div class="shuru">
+            <input id="username" type="text"  name="usename" placeholder="请输入用户名" class="shurukuang"/>
+        </div>
+        <div class="shuru">  
+            <input id="password" type="text"  name="gender" placeholder="请输入密码" class="shurukuang"/>
+        </div>  
+        <div class="shuru">    
+            <input id="password2" type="text"  name="how old" placeholder="请确认密码"  class="shurukuang"/>
+
+        </div>  
+        <div class="gen_sel" >
+            <input type="radio"   value="1"  name="gender">男
+            
+            <input type="radio"    value="0"  name="gender"  >女
+        </div>
+        
+
+           
+
+  
+
+        <div  class="que_sel">
+           
+            <select  id="qa"  class="mima" placeholder="请选择密保问题">
+                      <option value="-1">请选择密保问题</option>
+                      <option value="1">密保问题</option>
+                      <option value="2">你的手机号码是多少</option>
+                      <option value="3">你女朋友叫什么</option>
+            </select>
+        </div>
+        <div class="shuru">
+            <input  id="useranswer" type="text"   name="answer" placeholder="请输入答案"／  class="shurukuang"/>
+        </div>
+
+        <div  class="agree_daxuan">
+              
+            <input  id="protocol" type="checkbox"  value="1"  name="agree" >同意<a href="xieyi.html" class="danxuan_c" target="_blank" >WiFi万能钥匙注册协议</a>
+        </div>
+          <div class="btn_all">
+            <button type="button" value="提交" class="btn_s" onclick="checkform()">注册</button>
+            <button type="reset" value="重置"  class="btn_r">重置</button>
+        </div>    
+</form>
+
+</div>
+          
+
+          <script >
+            function checkform(){
+                  // alert('准备提交');
+
+
+                  function verify_username(){
+                    var userName1 = document.getElementById('username').value;
+
+                     if (userName1=='') {
+                   alert('用户名不能为空');
+                   return false;}
+
+                    return true;
+                      }
+              
+              
+              
+                  function verify_password(){
+                    var  password=document.getElementById('password').value
+                      var  password2=document.getElementById('password2').value
+
+                        if (password=='') {
+                        alert('请输入密码')
+
+                        return false;
+                           
+                      };
+                      if (password != password2) {
+                        alert('密码不一致，请重新输入') 
+                        return false;  
+                      };
+                       return  true;
+                  }
+              
+            function verify_gender(){
+                    var genders= document.getElementsByName('gender');
+                    var genderval='';
+
+                    for (var i = 0; i< genders.length;i++) {
+                        
+                        if (genders[i].checked){
+                         genderval=genders[i].value
+
+                        };
+
+                    };
+                      if (genderval=='') {
+
+                        alert('请选择性别');
+                        return false;
+                      };
+                          return true;
+
+            }
+
+           
+             // 密保问题必须选中一个
+
+             function verify_qa(){
+                var qa = document.getElementById('qa').value;
+             if(qa < 0){
+              alert('密保问题必须选中一个');
+
+              return false;
+
+            };
+               return true;
+
+             }
+            
+            function  verify_useranswer(){
+                var useranswer = document.getElementById('useranswer').value
+
+              if (useranswer=='') {
+              alert('请输入密保答案');
+              return  false;
+              } 
+                return true;
+            }
+            function  verify_pro(){
+            var protocol = document.getElementById('protocol').checked;
+            if(!protocol){
+              alert('必须同意注册协议才能提交');
+              return false;
+            };    
+              return true;
+            }
+            
+            
+
+          // 调用函数
+               var username2 = verify_username();{
+                if(username2 == false){
+                    return false;
+                }
+                }
+              var password2= verify_password();{
+                if (password2==false) {
+
+                     return false;
+                };
+              }
+               var gender2 = verify_gender();{
+
+                if (gender2==false) {
+                    return false;
+                };
+               }
+               var qa2 = verify_qa();{
+                if (qa2==false) {
+
+                     return false;
+                };
+               }
+               var useanswer2=verify_useranswer();{
+
+                if (useanswer2==false) {
+                    return false;
+                };
+               }
+
+               var protocol2=verify_pro();{
+
+                if (protocol2==false) {
+
+                    return false
+                };
+               }
+
+
+            }
+          </script>
+         
+
+</body>
+</html>
+
+
+<!--  -->
